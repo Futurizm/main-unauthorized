@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/filter_sorting_authorized.css" />
+    <title>Выпускники Колледжа</title>
+  </head>
+  <body>
+    <div id="detailsBlock" class="sorting-block hidden">
+      <div class="sorting-block__gpa">
+        <div class="sorting-block__text">Средний балл</div>
+        <div class="menu-section__row menu-section__row_sort">
+          <div class="menu-section__column menu-section__column_clear">
+            <span class="menu-section__text menu-section__text_clear"
+              >БЕЗ СОРТИРОВКИ</span
+            >
+          </div>
+          <div class="menu-section__column">
+            <span class="menu-section__text">ПО ВОЗРАСТАНИЮ</span>
+          </div>
+          <div class="menu-section__column">
+            <span class="menu-section__text">ПО УБЫВАНИЮ</span>
+          </div>
+        </div>
+      </div>
+      <div class="sorting-block__dateofgraduation">
+        <div class="sorting-block__text">Дата Выпуска</div>
+        <div class="menu-section__row menu-section__row_sort">
+          <div class="menu-section__column menu-section__column_clear">
+            <span class="menu-section__text menu-section__text_clear"
+              >БЕЗ СОРТИРОВКИ</span
+            >
+          </div>
+          <div class="menu-section__column">
+            <span class="menu-section__text">ПО ВОЗРАСТАНИЮ</span>
+          </div>
+          <div class="menu-section__column">
+            <span class="menu-section__text">ПО УБЫВАНИЮ</span>
+          </div>
+        </div>
+      </div>
+      <button class="sorting-block__btn">Применить</button>
+    </div>
+
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container _container">
+          <div class="header__logo">
+            <img
+              class="header__logo__img"
+              src="./assets/header/header_logo.png"
+              alt=""
+            />
+          </div>
+          <div class="header__button__block">
+              <button class="header__profile">
+                  <img src="./assets/header/profile_logo.svg" alt="" />
+                  Профиль
+              </button>
+              <button class="header__signup">
+                  <img class="header__signup__img" src="./assets/header/logout_logo.svg" alt="" />
+                  Выход
+              </button>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <section class="image__section">
+          <div class="image__section__container _container">
+            <img src="./assets/main/ithub.png" alt="" />
+          </div>
+        </section>
+        <section class="grid__section">
+          <div class="grid__section__container _container">
+            <div class="grid__filter__block filter__block">
+              <div class="filter__block__1">
+                <h1 class="grid__section__header">Список выпускников</h1>
+                <div class="filter__block__1__buttons__block">
+                  <button id="showDetailsBtn" class="filter__block__1__button">
+                    <img src="./assets/main/icons/arrows.svg" alt="" />
+                    Сортировка
+                  </button>
+                  <button class="filter__btn">
+                    <img src="./assets/main/icons/tools.svg" alt="" />
+                    Фильтры
+                  </button>
+                  <div class="modal-window-box">
+                    <div class="modal-window-box-container">
+                      <div class="modal_date_title">Год выпуска</div>
+                      <div class="modal_window_dates">
+                        <div class="modal_window_dates_container">
+                            <button class="dates_btn">Все</button>
+                            <button class="dates_btn">2021г.</button>
+                            <button class="dates_btn">2022г.</button>
+                            <button class="dates_btn">2023г.</button>
+                            <button class="dates_btn">2024г.</button>
+                        </div>
+                      </div>
+                      <div class="modal_date_specialize">Специальность</div>
+                      <button class="modal_sort">Выбрать специальность</button>
+                    </div>
+                    <div class="modal_sort_window">
+                      <div class="modal_sort_window_container">
+                        <div class="area">
+                          06120200 – Системы информационной безопасности
+                        </div>
+                        <div class="area">
+                          04130100 - Менеджмент (по отраслям и областям
+                          применения)
+                        </div>
+                        <div class="area">
+                          06130100 - Программное обеспечение (по видам)
+                        </div>
+                        <div class="area">
+                          07130700 - Техническое обслуживание, ремонт и
+                          эксплуатация электромеханического оборудования (по
+                          видам и отраслям)
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid__section__menu menu-section">
+              <div class="menu-section__row">
+                <div class="menu-section__column">
+                  <span class="menu-section__text">СОРТИРОВКА</span>
+                </div>
+                <div class="menu-section__column">
+                  <span class="menu-section__text">СПЕЦИАЛИЗАЦИЯ</span>
+                </div>
+                <div class="menu-section__column">
+                  <span class="menu-section__text">ГОД</span>
+                </div>
+                <div class="menu-section__column">
+                  <span class="menu-section__text">ГОРОД</span>
+                </div>
+                <div class="menu-section__column">
+                  <span class="menu-section__text">КОЛЛЕДЖ</span>
+                </div>
+                <div class="menu-section__column menu-section__column_clear">
+                  <img
+                    class="menu-section__icon"
+                    src="assets/main/icons/close.svg"
+                    alt=""
+                  />
+                  <span class="menu-section__text menu-section__text_clear"
+                    >ОЧИСТИТЬ</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="grid__section__cards cards">
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__container">
+                  <div class="cards__item__arrow">
+                    <img
+                      class="cards__item__arrow__img"
+                      src="./assets/main/icons/arrow-up-right.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__image">
+                    <img
+                      class="cards__item__img"
+                      src="./assets/main/man.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cards__item__text">Иванов И.И</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+  <script>
+    // Находим кнопку и блок с подробностями по их идентификаторам
+    const showDetailsBtn = document.getElementById("showDetailsBtn");
+    const detailsBlock = document.getElementById("detailsBlock");
+
+    // Добавляем обработчик события клика по кнопке
+    showDetailsBtn.addEventListener("click", function () {
+      // Переключаем класс для изменения видимости блока с подробностями
+      detailsBlock.classList.toggle("hidden");
+    });
+  </script>
+
+  <script>
+    document
+      .querySelectorAll(".menu-section__row_sort")
+      .forEach((container) => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        container.addEventListener("mousedown", (e) => {
+          isDown = true;
+          container.classList.add("active");
+          startX = e.pageX - container.offsetLeft;
+          scrollLeft = container.scrollLeft;
+        });
+
+        container.addEventListener("mouseleave", () => {
+          isDown = false;
+          container.classList.remove("active");
+        });
+
+        container.addEventListener("mouseup", () => {
+          isDown = false;
+          container.classList.remove("active");
+        });
+
+        container.addEventListener("mousemove", (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - container.offsetLeft;
+          const walk = (x - startX) * 3; 
+          container.scrollLeft = scrollLeft - walk;
+        });
+      });
+  </script>
+  <script src="./scripts/script.js"></script>
+</html>

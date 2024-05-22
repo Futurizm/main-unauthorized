@@ -1,0 +1,138 @@
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    line-height: 1;
+    font-style: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+button {
+    cursor: pointer;
+}
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+a,
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+ul li {
+    list-style-type: none;
+}
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-style: inherit;
+    font-weight: 400;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+._container {
+    max-width: 1330px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.main__student {
+    display: flex;
+    gap: 48px;
+}
+.main__student_title {
+    color: #000;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.main_student_subtitle {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.main_student_subtitle span {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.rows {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.button__redc {
+    display: flex;
+    align-items: center;
+}
+.redc {
+    display: inline-flex;
+    padding: 14px 24px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    border: 1px solid #4e9fff;
+    background: #4e9fff;
+
+    a {
+        color:  #fff;
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+.redc:hover {
+    background: #2b84f1;
+
+}
+
+.main__student-info {
+    display: flex;
+    gap: 35px;
+}
+
+.main__student {
+    display: flex;
+    justify-content: space-between;
+}
